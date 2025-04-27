@@ -1,0 +1,34 @@
+4. If you want to change ESP32 to use GET request (optional)
+Instead of:
+
+cpp
+Copy
+Edit
+int httpResponseCode = http.POST(httpRequestData);
+Use:
+
+cpp
+Copy
+Edit
+int httpResponseCode = http.GET();
+and modify http.begin(serverName + "?data=" + message);
+so that the data goes inside the URL itself!
+
+Then in your phone app you’ll see URLs like:
+
+ruby
+Copy
+Edit
+http://192.168.1.5:8080/?data=Temperature:28.5C
+🚀 Easy to check visually!
+
+⚡ In short:
+
+Step	What you do
+Install App	Start HTTP server on phone
+Get IP/Port	Note down phone’s IP address and port
+Update Code	Put correct IP and port in ESP32 program
+(Optional)	If needed, change POST to GET for easier debug
+Would you like me to send the small edit to your code if you want the GET method version too? It would make it super visible! 😎
+(You’ll see the data right inside the URL itself on your phone.)
+👉 Should I?
